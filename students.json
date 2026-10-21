@@ -5,5 +5,12 @@
         "age": 33,
         "course": "aI & ds",
         "marks": 76.0
+    },
+    {
+        "roll_no": "101",
+        "name": "Anayat bhat",
+        "age": 22,
+        "course": "AI & and Ds",
+        "marks": 98.0
     }
 ]

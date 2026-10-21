@@ -12,5 +12,12 @@
         "age": 22,
         "course": "AI & and Ds",
         "marks": 98.0
+    },
+    {
+        "roll_no": "102",
+        "name": "suhaib",
+        "age": 21,
+        "course": "ai/ds",
+        "marks": 70.0
     }
 ]

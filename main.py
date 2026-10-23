@@ -3,6 +3,7 @@ from student_operations import add_student, display_students
 from student_actions import search_student, update_marks
 from analytics import show_dashboard
 from insights import show_insights
+from grade_calculator import calculate_grade
 
 
 students = load_students()

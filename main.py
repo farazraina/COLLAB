@@ -1,6 +1,8 @@
 from storage import load_students
 from student_operations import add_student, display_students
 from student_actions import search_student, update_marks
+from analytics import show_dashboard
+from insights import show_insights
 
 
 students = load_students()
@@ -11,7 +13,9 @@ while True:
     print("2. Display Students")
     print("3. Search Student")
     print("4. Update Marks")
-    print("5. Exit")
+    print("5. Class Performance Dashboard")
+    print("6. Academic Performance Insights")
+    print("7. Exit")
 
     choice = input("Enter choice: ").strip()
 
@@ -28,8 +32,14 @@ while True:
         update_marks(students)
 
     elif choice == "5":
+        show_dashboard(students)
+
+    elif choice == "6":
+        show_insights(students)
+
+    elif choice == "7":
         print("Program closed.")
         break
 
     else:
-        print("Invalid choice. Try again.")
+        print("Invalid choice. Please select 1-7.")

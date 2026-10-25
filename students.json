@@ -1,9 +1,16 @@
 [
     {
-        "roll_no": "01",
-        "name": "Anayat bhat",
+        "roll_no": "101",
+        "name": "anayat zahoor",
         "age": 21,
-        "course": "AI and DS",
-        "marks": 98.0
+        "course": "ai/ds",
+        "marks": 69.0
+    },
+    {
+        "roll_no": "102",
+        "name": "faraz tahir",
+        "age": 22,
+        "course": "ai/ds",
+        "marks": 70.0
     }
 ]

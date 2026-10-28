@@ -3,70 +3,210 @@
         "roll_no": "101",
         "name": "anayat zahoor",
         "age": 21,
-        "course": "ai/ds",
-        "marks": 69.0
+        "course": "AI & DS",
+        "subjects": {
+            "Mathematics": 68.0,
+            "Python Programming": 74.0,
+            "Professional Skills": 70.0,
+            "Database Management": 66.0,
+            "DSD": 67.0
+        },
+        "total_marks": 345.0,
+        "max_marks": 500.0,
+        "percentage": 69.0,
+        "marks": 69.0,
+        "grade": "C",
+        "cgpa": 6.9,
+        "remark": "Good",
+        "status": "PASSED"
     },
     {
         "roll_no": "102",
         "name": "faraz tahir",
         "age": 22,
-        "course": "ai/ds",
-        "marks": 70.0
+        "course": "AI & DS",
+        "subjects": {
+            "Mathematics": 72.0,
+            "Python Programming": 75.0,
+            "Professional Skills": 68.0,
+            "Database Management": 71.0,
+            "DSD": 64.0
+        },
+        "total_marks": 350.0,
+        "max_marks": 500.0,
+        "percentage": 70.0,
+        "marks": 70.0,
+        "grade": "B",
+        "cgpa": 7.0,
+        "remark": "Very Good",
+        "status": "PASSED"
     },
     {
         "roll_no": "103",
         "name": "suhaib",
         "age": 35,
         "course": "AI & DS",
-        "marks": 98.0
+        "subjects": {
+            "Mathematics": 96.0,
+            "Python Programming": 100.0,
+            "Professional Skills": 98.0,
+            "Database Management": 99.0,
+            "DSD": 97.0
+        },
+        "total_marks": 490.0,
+        "max_marks": 500.0,
+        "percentage": 98.0,
+        "marks": 98.0,
+        "grade": "A+",
+        "cgpa": 9.8,
+        "remark": "Outstanding",
+        "status": "PASSED"
     },
     {
         "roll_no": "104",
         "name": "ibrahim",
         "age": 17,
         "course": "AI & DS",
-        "marks": 64.0
+        "subjects": {
+            "Mathematics": 56.0,
+            "Python Programming": 72.0,
+            "Professional Skills": 68.0,
+            "Database Management": 64.0,
+            "DSD": 60.0
+        },
+        "total_marks": 320.0,
+        "max_marks": 500.0,
+        "percentage": 64.0,
+        "marks": 64.0,
+        "grade": "C",
+        "cgpa": 6.4,
+        "remark": "Good",
+        "status": "PASSED"
     },
     {
         "roll_no": "105",
         "name": "sehreen 1",
         "age": 15,
         "course": "AI & DS",
-        "marks": 89.0
+        "subjects": {
+            "Mathematics": 92.0,
+            "Python Programming": 90.0,
+            "Professional Skills": 86.0,
+            "Database Management": 88.0,
+            "DSD": 89.0
+        },
+        "total_marks": 445.0,
+        "max_marks": 500.0,
+        "percentage": 89.0,
+        "marks": 89.0,
+        "grade": "A",
+        "cgpa": 8.9,
+        "remark": "Excellent",
+        "status": "PASSED"
     },
     {
         "roll_no": "106",
         "name": "Rauf",
         "age": 24,
         "course": "CSE",
-        "marks": 78.0
+        "subjects": {
+            "Mathematics": 80.0,
+            "Python Programming": 82.0,
+            "Professional Skills": 75.0,
+            "Database Management": 77.0,
+            "DSD": 76.0
+        },
+        "total_marks": 390.0,
+        "max_marks": 500.0,
+        "percentage": 78.0,
+        "marks": 78.0,
+        "grade": "B",
+        "cgpa": 7.8,
+        "remark": "Very Good",
+        "status": "PASSED"
     },
     {
         "roll_no": "107",
         "name": "Hammad",
         "age": 25,
         "course": "CSE",
-        "marks": 68.0
+        "subjects": {
+            "Mathematics": 65.0,
+            "Python Programming": 72.0,
+            "Professional Skills": 69.0,
+            "Database Management": 67.0,
+            "DSD": 67.0
+        },
+        "total_marks": 340.0,
+        "max_marks": 500.0,
+        "percentage": 68.0,
+        "marks": 68.0,
+        "grade": "C",
+        "cgpa": 6.8,
+        "remark": "Good",
+        "status": "PASSED"
     },
     {
         "roll_no": "108",
         "name": "sadees",
         "age": 26,
         "course": "AI & DS",
-        "marks": 68.0
+        "subjects": {
+            "Mathematics": 70.0,
+            "Python Programming": 64.0,
+            "Professional Skills": 72.0,
+            "Database Management": 68.0,
+            "DSD": 66.0
+        },
+        "total_marks": 340.0,
+        "max_marks": 500.0,
+        "percentage": 68.0,
+        "marks": 68.0,
+        "grade": "C",
+        "cgpa": 6.8,
+        "remark": "Good",
+        "status": "PASSED"
     },
     {
         "roll_no": "109",
         "name": "tufail",
         "age": 24,
         "course": "AI & DS",
-        "marks": 56.0
+        "subjects": {
+            "Mathematics": 48.0,
+            "Python Programming": 58.0,
+            "Professional Skills": 62.0,
+            "Database Management": 54.0,
+            "DSD": 58.0
+        },
+        "total_marks": 280.0,
+        "max_marks": 500.0,
+        "percentage": 56.0,
+        "marks": 56.0,
+        "grade": "D",
+        "cgpa": 5.6,
+        "remark": "Pass",
+        "status": "PASSED"
     },
     {
         "roll_no": "110",
         "name": "payam",
         "age": 23,
         "course": "CSE",
-        "marks": 78.0
+        "subjects": {
+            "Mathematics": 76.0,
+            "Python Programming": 84.0,
+            "Professional Skills": 78.0,
+            "Database Management": 74.0,
+            "DSD": 78.0
+        },
+        "total_marks": 390.0,
+        "max_marks": 500.0,
+        "percentage": 78.0,
+        "marks": 78.0,
+        "grade": "B",
+        "cgpa": 7.8,
+        "remark": "Very Good",
+        "status": "PASSED"
     }
 ]

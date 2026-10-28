@@ -12,5 +12,61 @@
         "age": 22,
         "course": "ai/ds",
         "marks": 70.0
+    },
+    {
+        "roll_no": "103",
+        "name": "suhaib",
+        "age": 35,
+        "course": "AI & DS",
+        "marks": 98.0
+    },
+    {
+        "roll_no": "104",
+        "name": "ibrahim",
+        "age": 17,
+        "course": "AI & DS",
+        "marks": 64.0
+    },
+    {
+        "roll_no": "105",
+        "name": "sehreen 1",
+        "age": 15,
+        "course": "AI & DS",
+        "marks": 89.0
+    },
+    {
+        "roll_no": "106",
+        "name": "Rauf",
+        "age": 24,
+        "course": "CSE",
+        "marks": 78.0
+    },
+    {
+        "roll_no": "107",
+        "name": "Hammad",
+        "age": 25,
+        "course": "CSE",
+        "marks": 68.0
+    },
+    {
+        "roll_no": "108",
+        "name": "sadees",
+        "age": 26,
+        "course": "AI & DS",
+        "marks": 68.0
+    },
+    {
+        "roll_no": "109",
+        "name": "tufail",
+        "age": 24,
+        "course": "AI & DS",
+        "marks": 56.0
+    },
+    {
+        "roll_no": "110",
+        "name": "payam",
+        "age": 23,
+        "course": "CSE",
+        "marks": 78.0
     }
 ]

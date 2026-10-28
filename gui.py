@@ -4,8 +4,8 @@
 # Built with Tkinter and Matplotlib.
 #
 # Color Theme:
-#   - Primary Dark : #162311 (Obsidian Forest)
-#   - Primary Light: #FFF9F9 (Porcelain Ivory White)
+#   - Primary Light : #fcf8f9 (Porcelain Pearl White)
+#   - Primary Crimson: #a21721 (Cardinal Crimson Ruby)
 # =====================================================================
 
 import tkinter as tk
@@ -22,50 +22,62 @@ from grade_calculator import calculate_grade, get_grade_remark
 
 
 # =====================================================================
-# 1. COLOR THEMES (#FFF9F9 and #162311)
+# 1. COLOR THEMES (#fcf8f9 and #a21721)
 # =====================================================================
 
-# Dark Theme (default)
-DARK_THEME = {
-    "name": "dark",
-    "bg":             "#162311",   # Dark green-black canvas
-    "sidebar":        "#0F1A0C",   # Deeper dark sidebar
-    "card":           "#1D2D18",   # Card surface
-    "card_hover":     "#273A21",   # Hover state for card/buttons
-    "input_bg":       "#121D0E",   # Text input box background
-    "border":         "#31442A",   # Border line color
-    "text":           "#FFF9F9",   # White text
-    "text_muted":     "#A2B49F",   # Soft gray-green text
-    "btn_bg":         "#FFF9F9",   # White pill button background
-    "btn_fg":         "#162311",   # Dark text on white button
-    "btn_hover":      "#E8E2E2",   # Hover color for white button
-    "chart_bg":       "#1D2D18",   # Matplotlib chart background
-    "chart_plot":     "#162311",   # Matplotlib inner plot area
-    "chart_bar":      "#FFF9F9",   # Main bar color
-    "chart_bar_alt":  "#7F977B",   # Secondary bar color
-}
-
-# Light Theme
+# Light Theme (Default: Clean Porcelain Pearl & Cardinal Crimson)
 LIGHT_THEME = {
     "name": "light",
-    "bg":             "#FFF9F9",   # White canvas
-    "sidebar":        "#F2ECEC",   # Light gray sidebar
-    "card":           "#FFFFFF",   # Pure white card
-    "card_hover":     "#F4EEEE",   # Hover state
-    "input_bg":       "#FFFFFF",   # Text input box background
-    "border":         "#DDD4D4",   # Border line color
-    "text":           "#162311",   # Dark green-black text
-    "text_muted":     "#556651",   # Muted dark olive text
-    "btn_bg":         "#162311",   # Dark pill button background
-    "btn_fg":         "#FFF9F9",   # White text on dark button
-    "btn_hover":      "#273A21",   # Hover color for dark button
-    "chart_bg":       "#FFFFFF",   # Matplotlib chart background
-    "chart_plot":     "#FFF9F9",   # Matplotlib inner plot area
-    "chart_bar":      "#162311",   # Main bar color
-    "chart_bar_alt":  "#7F977B",   # Secondary bar color
+    "bg":             "#FCF8F9",   # Porcelain Pearl White canvas
+    "sidebar":        "#F3E9EB",   # Soft rose-tinted gray sidebar
+    "card":           "#FFFFFF",   # Crisp white card surface
+    "card_hover":     "#FAF2F3",   # Card hover
+    "input_bg":       "#FFFFFF",   # Entry box background
+    "border":         "#E8D9DC",   # Subtle border
+    "text":           "#1C0F11",   # Deep dark charcoal text
+    "text_muted":     "#6E5659",   # Soft taupe-rose muted text
+    "accent":         "#A21721",   # Signature Cardinal Crimson
+    "accent_hover":   "#BF2430",   # Brighter crimson hover
+    "btn_primary_bg": "#A21721",   # Crimson primary button
+    "btn_primary_fg": "#FCF8F9",   # White text on crimson button
+    "btn_primary_hov":"#831019",   # Dark crimson hover
+    "btn_sec_bg":     "#F2E6E8",   # Neutral soft secondary button
+    "btn_sec_fg":     "#A21721",   # Crimson text on secondary button
+    "btn_sec_hov":    "#E6D4D7",   # Secondary button hover
+    "chart_bg":       "#FFFFFF",   # Matplotlib figure background
+    "chart_plot":     "#FCF8F9",   # Matplotlib axes plot area
+    "chart_bar":      "#A21721",   # Main bar color
+    "chart_bar_alt":  "#8E7679",   # Failing student bar color
+    "chart_border":   "#E8D9DC",   # Spines & gridlines
 }
 
-# Simple Fonts
+# Dark Theme (Obsidian Crimson Dark)
+DARK_THEME = {
+    "name": "dark",
+    "bg":             "#150C0E",   # Deep obsidian dark canvas
+    "sidebar":        "#0E0709",   # Deeper dark sidebar
+    "card":           "#201215",   # Dark crimson-tinted card surface
+    "card_hover":     "#2C1A1E",   # Card hover
+    "input_bg":       "#13090B",   # Entry box background
+    "border":         "#381E23",   # Subtle dark border
+    "text":           "#FCF8F9",   # Crisp porcelain white text
+    "text_muted":     "#BBA4A7",   # Soft silver-rose muted text
+    "accent":         "#A21721",   # Signature Cardinal Crimson
+    "accent_hover":   "#BF2430",   # Brighter crimson hover
+    "btn_primary_bg": "#A21721",   # Crimson primary button
+    "btn_primary_fg": "#FCF8F9",   # White text on crimson button
+    "btn_primary_hov":"#BF2430",   # Hover state
+    "btn_sec_bg":     "#2C1A1E",   # Neutral dark button
+    "btn_sec_fg":     "#FCF8F9",   # White text
+    "btn_sec_hov":    "#3B2329",   # Hover state
+    "chart_bg":       "#201215",   # Matplotlib figure background
+    "chart_plot":     "#150C0E",   # Matplotlib axes plot area
+    "chart_bar":      "#A21721",   # Main bar color
+    "chart_bar_alt":  "#6B5356",   # Failing student bar color
+    "chart_border":   "#381E23",   # Spines & gridlines
+}
+
+# Fonts
 FONT_TITLE = ("Segoe UI", 18, "bold")
 FONT_H1    = ("Segoe UI", 13, "bold")
 FONT_BODY  = ("Segoe UI", 10)
@@ -87,22 +99,22 @@ class StudentApp(tk.Tk):
 
         # Window settings
         self.title("Student Management System • Analytics Dashboard")
-        self.geometry("1140x730")
-        self.minsize(960, 620)
+        self.geometry("1180x750")
+        self.minsize(1020, 640)
 
-        # Set the starting theme to dark
-        self.theme = DARK_THEME
+        # Default to Light Theme (#FCF8F9 & #A21721)
+        self.theme = LIGHT_THEME
         self.configure(bg=self.theme["bg"])
 
         # Load students list from file
         self.students = load_students()
 
-        # Track current page and graph mode
+        # Track active page and graph mode
         self.current_page = "dashboard"
         self.current_graph = "dual"
         self.chart_canvas = None
 
-        # Build the user interface
+        # Build user interface
         self._setup_table_style()
         self._build_sidebar_and_content()
 
@@ -110,7 +122,7 @@ class StudentApp(tk.Tk):
     # THEME AND STYLES
     # -----------------------------------------------------------------
     def _setup_table_style(self):
-        """Sets up the style for student records table (ttk.Treeview)."""
+        """Sets up ttk.Treeview style for student table."""
         style = ttk.Style(self)
         style.theme_use("clam")
 
@@ -119,35 +131,34 @@ class StudentApp(tk.Tk):
             background=self.theme["card"],
             foreground=self.theme["text"],
             fieldbackground=self.theme["card"],
-            rowheight=30,
+            rowheight=32,
             font=FONT_BODY,
             borderwidth=0
         )
         style.configure(
             "Custom.Treeview.Heading",
             background=self.theme["sidebar"],
-            foreground=self.theme["text"],
+            foreground=self.theme["accent"],
             font=FONT_BOLD,
             relief="flat",
             padding=(6, 8)
         )
         style.map(
             "Custom.Treeview",
-            background=[("selected", self.theme["btn_bg"])],
-            foreground=[("selected", self.theme["btn_fg"])]
+            background=[("selected", self.theme["btn_primary_bg"])],
+            foreground=[("selected", self.theme["btn_primary_fg"])]
         )
 
     def toggle_theme(self):
-        """Switches between Dark (#162311) and Light (#FFF9F9) theme."""
-        if self.theme["name"] == "dark":
-            self.theme = LIGHT_THEME
-        else:
+        """Switches between Light (#FCF8F9) and Dark (#150C0E) theme."""
+        if self.theme["name"] == "light":
             self.theme = DARK_THEME
+        else:
+            self.theme = LIGHT_THEME
 
         self.configure(bg=self.theme["bg"])
         self._setup_table_style()
 
-        # Rebuild the window widgets with the new colors
         for widget in self.winfo_children():
             widget.destroy()
 
@@ -157,15 +168,15 @@ class StudentApp(tk.Tk):
     # WIDGET CREATION HELPERS
     # -----------------------------------------------------------------
     def make_primary_button(self, parent, text, command):
-        """Creates a signature pill button (white in dark mode, dark in light mode)."""
+        """Creates signature pill button in Cardinal Crimson #A21721."""
         btn = tk.Button(
             parent,
             text=text,
             command=command,
-            bg=self.theme["btn_bg"],
-            fg=self.theme["btn_fg"],
-            activebackground=self.theme["btn_hover"],
-            activeforeground=self.theme["btn_fg"],
+            bg=self.theme["btn_primary_bg"],
+            fg=self.theme["btn_primary_fg"],
+            activebackground=self.theme["btn_primary_hov"],
+            activeforeground=self.theme["btn_primary_fg"],
             font=FONT_BOLD,
             relief="flat",
             cursor="hand2",
@@ -173,20 +184,20 @@ class StudentApp(tk.Tk):
             pady=7,
             bd=0
         )
-        btn.bind("<Enter>", lambda e: btn.config(bg=self.theme["btn_hover"]))
-        btn.bind("<Leave>", lambda e: btn.config(bg=self.theme["btn_bg"]))
+        btn.bind("<Enter>", lambda e: btn.config(bg=self.theme["btn_primary_hov"]))
+        btn.bind("<Leave>", lambda e: btn.config(bg=self.theme["btn_primary_bg"]))
         return btn
 
     def make_secondary_button(self, parent, text, command):
-        """Creates a subtle secondary button."""
+        """Creates subtle secondary button."""
         btn = tk.Button(
             parent,
             text=text,
             command=command,
-            bg=self.theme["card_hover"],
-            fg=self.theme["text"],
-            activebackground=self.theme["border"],
-            activeforeground=self.theme["text"],
+            bg=self.theme["btn_sec_bg"],
+            fg=self.theme["btn_sec_fg"],
+            activebackground=self.theme["btn_sec_hov"],
+            activeforeground=self.theme["btn_sec_fg"],
             font=FONT_BODY,
             relief="flat",
             cursor="hand2",
@@ -194,31 +205,30 @@ class StudentApp(tk.Tk):
             pady=6,
             bd=0
         )
-        btn.bind("<Enter>", lambda e: btn.config(bg=self.theme["border"]))
-        btn.bind("<Leave>", lambda e: btn.config(bg=self.theme["card_hover"]))
+        btn.bind("<Enter>", lambda e: btn.config(bg=self.theme["btn_sec_hov"]))
+        btn.bind("<Leave>", lambda e: btn.config(bg=self.theme["btn_sec_bg"]))
         return btn
 
     def make_input_entry(self, parent, width=30):
-        """Creates a clean text entry box with a colored border."""
+        """Creates clean entry box with border focus highlight."""
         border_frame = tk.Frame(parent, bg=self.theme["border"], padx=1, pady=1)
         entry = tk.Entry(
             border_frame,
             bg=self.theme["input_bg"],
             fg=self.theme["text"],
-            insertbackground=self.theme["text"],
+            insertbackground=self.theme["accent"],
             font=FONT_BODY,
             relief="flat",
             bd=0,
             width=width
         )
         entry.pack(fill="both", expand=True, padx=8, pady=6)
-        # Highlight border when clicking inside
-        entry.bind("<FocusIn>",  lambda e: border_frame.config(bg=self.theme["btn_bg"]))
+        entry.bind("<FocusIn>",  lambda e: border_frame.config(bg=self.theme["accent"]))
         entry.bind("<FocusOut>", lambda e: border_frame.config(bg=self.theme["border"]))
         return border_frame, entry
 
     def make_form_row(self, parent, label_text, row_num):
-        """Adds a label and entry input to a form grid."""
+        """Adds label and entry input to a form grid."""
         tk.Label(
             parent,
             text=label_text,
@@ -236,24 +246,24 @@ class StudentApp(tk.Tk):
     # BASE LAYOUT (SIDEBAR & CONTENT AREA)
     # -----------------------------------------------------------------
     def _build_sidebar_and_content(self):
-        """Constructs the left navigation sidebar and right content frame."""
+        """Constructs left sidebar and main content frame."""
         # 1. Left Sidebar
         self.sidebar = tk.Frame(self, bg=self.theme["sidebar"], width=230)
         self.sidebar.pack(side="left", fill="y")
         self.sidebar.pack_propagate(False)
 
-        # App Brand Header
+        # Brand Header
         brand_box = tk.Frame(self.sidebar, bg=self.theme["sidebar"], padx=18, pady=20)
         brand_box.pack(fill="x")
 
-        # Small pill badge
-        badge = tk.Frame(brand_box, bg=self.theme["btn_bg"], padx=8, pady=3)
+        # Crimson Pill badge
+        badge = tk.Frame(brand_box, bg=self.theme["accent"], padx=9, pady=3)
         badge.pack(anchor="w", pady=(0, 8))
         tk.Label(
             badge,
             text="● ACADEMIC SUITE",
-            bg=self.theme["btn_bg"],
-            fg=self.theme["btn_fg"],
+            bg=self.theme["accent"],
+            fg="#FCF8F9",
             font=("Segoe UI", 8, "bold")
         ).pack()
 
@@ -268,7 +278,7 @@ class StudentApp(tk.Tk):
 
         tk.Label(
             brand_box,
-            text="#fff9f9 • #162311 Edition",
+            text="#fcf8f9 • #a21721 Edition",
             bg=self.theme["sidebar"],
             fg=self.theme["text_muted"],
             font=FONT_SMALL,
@@ -294,8 +304,8 @@ class StudentApp(tk.Tk):
                 self.sidebar,
                 text=f"  {title}",
                 command=lambda c=cmd, k=key: self._switch_page(c, k),
-                bg=self.theme["btn_bg"] if is_active else self.theme["sidebar"],
-                fg=self.theme["btn_fg"] if is_active else self.theme["text_muted"],
+                bg=self.theme["accent"] if is_active else self.theme["sidebar"],
+                fg="#FCF8F9" if is_active else self.theme["text_muted"],
                 activebackground=self.theme["card_hover"],
                 activeforeground=self.theme["text"],
                 font=FONT_BOLD if is_active else FONT_BODY,
@@ -309,12 +319,12 @@ class StudentApp(tk.Tk):
             btn.pack(fill="x", padx=8, pady=2)
             self.nav_buttons[key] = btn
 
-        # Theme switcher at bottom of sidebar
+        # Theme Switcher at bottom of sidebar
         bottom_box = tk.Frame(self.sidebar, bg=self.theme["card"], padx=12, pady=12)
         bottom_box.pack(side="bottom", fill="x", padx=12, pady=16)
 
-        theme_label = "☀️ Light Mode (#FFF9F9)" if self.theme["name"] == "dark" else "🌙 Dark Mode (#162311)"
-        self.make_secondary_button(bottom_box, theme_label, self.toggle_theme).pack(fill="x")
+        theme_text = "🌙 Dark Mode" if self.theme["name"] == "light" else "☀️ Light Mode (#FCF8F9)"
+        self.make_secondary_button(bottom_box, theme_text, self.toggle_theme).pack(fill="x")
 
         tk.Label(
             bottom_box,
@@ -324,11 +334,10 @@ class StudentApp(tk.Tk):
             font=FONT_SMALL
         ).pack(anchor="w", pady=(8, 0))
 
-        # 2. Right Main Content Area
+        # 2. Main Content Area
         self.content = tk.Frame(self, bg=self.theme["bg"])
         self.content.pack(side="left", fill="both", expand=True, padx=24, pady=24)
 
-        # Show current active page
         if self.current_page == "dashboard":
             self.show_dashboard()
         elif self.current_page == "view":
@@ -343,17 +352,17 @@ class StudentApp(tk.Tk):
             self.show_insights()
 
     def _switch_page(self, command, page_key):
-        """Highlights the active sidebar button and opens the selected page."""
+        """Switches page and updates active sidebar button."""
         self.current_page = page_key
         for key, btn in self.nav_buttons.items():
             if key == page_key:
-                btn.config(bg=self.theme["btn_bg"], fg=self.theme["btn_fg"], font=FONT_BOLD)
+                btn.config(bg=self.theme["accent"], fg="#FCF8F9", font=FONT_BOLD)
             else:
                 btn.config(bg=self.theme["sidebar"], fg=self.theme["text_muted"], font=FONT_BODY)
         command()
 
     def _clear_content(self):
-        """Cleans up previous page content and matplotlib charts."""
+        """Clears content and frees matplotlib canvas resources."""
         if self.chart_canvas:
             try:
                 self.chart_canvas.get_tk_widget().destroy()
@@ -367,7 +376,7 @@ class StudentApp(tk.Tk):
     def _make_header(self, title, subtitle=""):
         """Displays consistent page title and subtitle."""
         tk.Label(self.content, text=title, bg=self.theme["bg"],
-                 fg=self.theme["text"], font=FONT_TITLE, anchor="w").pack(anchor="w")
+                 fg=self.theme["accent"], font=FONT_TITLE, anchor="w").pack(anchor="w")
         if subtitle:
             tk.Label(self.content, text=subtitle, bg=self.theme["bg"],
                      fg=self.theme["text_muted"], font=FONT_BODY, anchor="w").pack(anchor="w", pady=(2, 0))
@@ -377,10 +386,10 @@ class StudentApp(tk.Tk):
     # 3. DASHBOARD PAGE (KPI CARDS + GRAPHS)
     # =====================================================================
     def show_dashboard(self):
-        """Displays summary statistics and interactive graphs."""
+        """Displays KPI summary cards and clean, non-overlapping graphs."""
         self._clear_content()
         self.students = load_students()
-        self._make_header("Performance Dashboard", "Class performance summary and visual charts")
+        self._make_header("Performance Dashboard", "Class performance summary & visual graphs (#fcf8f9 • #a21721)")
 
         if not self.students:
             empty_box = tk.Frame(self.content, bg=self.theme["card"], padx=24, pady=24)
@@ -390,7 +399,6 @@ class StudentApp(tk.Tk):
             self.make_primary_button(empty_box, "Add First Student", self.show_add).pack(pady=(12, 0))
             return
 
-        # Calculate statistics
         analytics = calculate_analytics(self.students)
 
         # Row of 6 KPI Stat Cards
@@ -413,8 +421,9 @@ class StudentApp(tk.Tk):
 
             tk.Label(card, text=label, bg=self.theme["card"],
                      fg=self.theme["text_muted"], font=FONT_SMALL).pack(anchor="w")
+            val_color = self.theme["accent"] if label in ("Highest Marks", "Pass Rate") else self.theme["text"]
             tk.Label(card, text=val, bg=self.theme["card"],
-                     fg=self.theme["text"], font=("Segoe UI", 18, "bold")).pack(anchor="w", pady=(4, 0))
+                     fg=val_color, font=("Segoe UI", 18, "bold")).pack(anchor="w", pady=(4, 0))
 
         # Graph Mode Selector Buttons
         ctrl_bar = tk.Frame(self.content, bg=self.theme["card"], padx=10, pady=8,
@@ -439,8 +448,8 @@ class StudentApp(tk.Tk):
                 ctrl_bar,
                 text=text,
                 command=lambda m=mode: self._switch_graph(m),
-                bg=self.theme["btn_bg"] if is_active else self.theme["card_hover"],
-                fg=self.theme["btn_fg"] if is_active else self.theme["text"],
+                bg=self.theme["accent"] if is_active else self.theme["btn_sec_bg"],
+                fg="#FCF8F9" if is_active else self.theme["btn_sec_fg"],
                 font=("Segoe UI", 9, "bold" if is_active else "normal"),
                 relief="flat",
                 cursor="hand2",
@@ -463,15 +472,15 @@ class StudentApp(tk.Tk):
         self.current_graph = mode
         for m, btn in self.graph_btns.items():
             if m == mode:
-                btn.config(bg=self.theme["btn_bg"], fg=self.theme["btn_fg"], font=("Segoe UI", 9, "bold"))
+                btn.config(bg=self.theme["accent"], fg="#FCF8F9", font=("Segoe UI", 9, "bold"))
             else:
-                btn.config(bg=self.theme["card_hover"], fg=self.theme["text"], font=("Segoe UI", 9, "normal"))
+                btn.config(bg=self.theme["btn_sec_bg"], fg=self.theme["btn_sec_fg"], font=("Segoe UI", 9, "normal"))
 
         analytics = calculate_analytics(self.students)
         self._draw_charts(analytics)
 
     def _draw_charts(self, analytics):
-        """Draws the selected graph onto the Tkinter canvas."""
+        """Draws clean charts with proper spacing, margins, and non-overlapping text."""
         for w in self.chart_container.winfo_children():
             w.destroy()
 
@@ -479,7 +488,7 @@ class StudentApp(tk.Tk):
 
         # 1. Dual View (Both Bar Chart and Donut Chart side by side)
         if mode == "dual":
-            fig = Figure(figsize=(9, 4.3), facecolor=self.theme["chart_bg"], dpi=100)
+            fig = Figure(figsize=(9.6, 4.4), facecolor=self.theme["chart_bg"], dpi=100)
             ax1 = fig.add_subplot(1, 2, 1)
             ax2 = fig.add_subplot(1, 2, 2)
             self._plot_bar(ax1)
@@ -488,28 +497,28 @@ class StudentApp(tk.Tk):
 
         # 2. Single Bar Chart
         elif mode == "bar":
-            fig = Figure(figsize=(9, 4.3), facecolor=self.theme["chart_bg"], dpi=100)
+            fig = Figure(figsize=(9.6, 4.4), facecolor=self.theme["chart_bg"], dpi=100)
             ax = fig.add_subplot(1, 1, 1)
-            self._plot_bar(ax)
+            self._plot_bar(ax, detailed=True)
             fig.tight_layout(pad=2.0)
 
         # 3. Single Donut Chart
         elif mode == "donut":
-            fig = Figure(figsize=(9, 4.3), facecolor=self.theme["chart_bg"], dpi=100)
+            fig = Figure(figsize=(9.6, 4.4), facecolor=self.theme["chart_bg"], dpi=100)
             ax = fig.add_subplot(1, 1, 1)
-            self._plot_donut(ax, analytics)
+            self._plot_donut(ax, analytics, detailed=True)
             fig.tight_layout(pad=2.0)
 
         # 4. Course Performance Bar Chart
         elif mode == "course":
-            fig = Figure(figsize=(9, 4.3), facecolor=self.theme["chart_bg"], dpi=100)
+            fig = Figure(figsize=(9.6, 4.4), facecolor=self.theme["chart_bg"], dpi=100)
             ax = fig.add_subplot(1, 1, 1)
             self._plot_course(ax, analytics)
             fig.tight_layout(pad=2.0)
 
         # 5. Score Brackets Histogram
         else:
-            fig = Figure(figsize=(9, 4.3), facecolor=self.theme["chart_bg"], dpi=100)
+            fig = Figure(figsize=(9.6, 4.4), facecolor=self.theme["chart_bg"], dpi=100)
             ax = fig.add_subplot(1, 1, 1)
             self._plot_brackets(ax, analytics)
             fig.tight_layout(pad=2.0)
@@ -517,56 +526,79 @@ class StudentApp(tk.Tk):
         # Embed into Tkinter
         self.chart_canvas = FigureCanvasTkAgg(fig, master=self.chart_container)
         self.chart_canvas.draw()
-        self.chart_canvas.get_tk_widget().pack(fill="both", expand=True, padx=8, pady=8)
+        self.chart_canvas.get_tk_widget().pack(fill="both", expand=True, padx=6, pady=6)
 
     # -----------------------------------------------------------------
-    # GRAPH PLOTTING FUNCTIONS
+    # GRAPH PLOTTING FUNCTIONS (PROPER SPACING & FORMATTING)
     # -----------------------------------------------------------------
-    def _plot_bar(self, ax):
-        """Plots bar chart of student marks."""
+    def _plot_bar(self, ax, detailed=False):
+        """Plots bar chart of student marks with rotated names and neat values."""
         ax.set_facecolor(self.theme["chart_plot"])
 
-        names = [s["name"] for s in self.students]
+        # Format student names cleanly so they never overlap
+        names = []
+        for s in self.students:
+            full = s["name"].strip().title()
+            parts = full.split()
+            if len(parts) > 1:
+                short_name = f"{parts[0]} {parts[1][0]}."
+            else:
+                short_name = full[:9]
+            names.append(short_name)
+
         marks = [float(s["marks"]) for s in self.students]
+        x_indices = range(len(names))
 
-        # Use white for passing, muted for failing
-        bar_colors = [self.theme["chart_bar"] if m >= 40 else self.theme["chart_bar_alt"] for m in marks]
-        bars = ax.bar(names, marks, color=bar_colors, width=0.55)
+        # Dynamic bar width based on student count
+        n_students = len(marks)
+        bar_width = 0.55 if n_students <= 6 else max(0.4, 4.5 / n_students)
 
-        # Add score numbers on top of each bar
+        # Cardinal Crimson #A21721 for pass, muted for fail
+        colors = [self.theme["chart_bar"] if m >= 40 else self.theme["chart_bar_alt"] for m in marks]
+        bars = ax.bar(x_indices, marks, color=colors, width=bar_width, edgecolor=self.theme["border"], linewidth=0.8)
+
+        # Annotations on top of bars
         for bar, m in zip(bars, marks):
             grade = calculate_grade(m)
+            label = f"{m:.0f}\n({grade})" if (detailed or n_students <= 6) else f"{m:.0f}"
             ax.annotate(
-                f"{m:.0f} ({grade})",
+                label,
                 xy=(bar.get_x() + bar.get_width() / 2, bar.get_height()),
-                xytext=(0, 4),
+                xytext=(0, 3),
                 textcoords="offset points",
                 ha="center", va="bottom",
                 color=self.theme["text"],
-                fontsize=8.5,
+                fontsize=8 if n_students > 8 else 8.5,
                 fontweight="bold"
             )
 
-        # Pass benchmark line (40)
-        ax.axhline(40, color=self.theme["text_muted"], linestyle="--", linewidth=1.1, label="Pass Mark (40)")
+        # Properly rotate student names to prevent jumbled overlapping
+        ax.set_xticks(list(x_indices))
+        rotation_angle = 35 if n_students >= 5 else 0
+        ha_align = "right" if rotation_angle > 0 else "center"
+        ax.set_xticklabels(names, rotation=rotation_angle, ha=ha_align, fontsize=8, color=self.theme["text"])
 
-        ax.set_ylim(0, 115)
-        ax.set_ylabel("Marks (0-100)", color=self.theme["text_muted"], fontsize=9)
-        ax.set_title("Student Marks Comparison", color=self.theme["text"], fontsize=11, fontweight="bold", pad=8)
-        ax.tick_params(colors=self.theme["text_muted"], labelsize=8.5)
+        # Benchmark reference lines
+        avg = sum(marks) / len(marks)
+        ax.axhline(40, color=self.theme["text_muted"], linestyle="--", linewidth=1.1, alpha=0.8, label="Pass (40)")
+        ax.axhline(avg, color=self.theme["accent"], linestyle=":", linewidth=1.2, alpha=0.9, label=f"Avg ({avg:.1f})")
+
+        ax.set_ylim(0, max(112, max(marks, default=100) + 12))
+        ax.set_ylabel("Marks (0-100)", color=self.theme["text_muted"], fontsize=8.5)
+        ax.set_title("Student Marks Comparison", color=self.theme["accent"], fontsize=11, fontweight="bold", pad=8)
+        ax.tick_params(colors=self.theme["text_muted"], labelsize=8)
 
         for spine in ax.spines.values():
-            spine.set_color(self.theme["border"])
-        ax.grid(axis="y", color=self.theme["border"], linestyle=":", alpha=0.5)
-        ax.legend(facecolor=self.theme["card"], edgecolor=self.theme["border"],
+            spine.set_color(self.theme["chart_border"])
+        ax.grid(axis="y", color=self.theme["chart_border"], linestyle=":", alpha=0.7)
+        ax.legend(facecolor=self.theme["card"], edgecolor=self.theme["chart_border"],
                   labelcolor=self.theme["text"], fontsize=7.5, loc="upper right")
 
-    def _plot_donut(self, ax, analytics):
-        """Plots pie/donut chart of grade distribution."""
+    def _plot_donut(self, ax, analytics, detailed=False):
+        """Plots clean donut chart with side legend to avoid crowded slice text."""
         ax.set_facecolor(self.theme["chart_bg"])
 
         grade_counts = analytics["grade_counts"]
-        # Only take grades with at least 1 student
         labels = []
         counts = []
         for g, c in grade_counts.items():
@@ -578,30 +610,41 @@ class StudentApp(tk.Tk):
             ax.text(0.5, 0.5, "No Data", color=self.theme["text_muted"], ha="center", va="center")
             return
 
-        # Harmonious monochrome slice colors
-        colors = ["#FFF9F9", "#D5E2D3", "#A1B69E", "#71896E", "#475C44"]
-        if self.theme["name"] == "light":
-            colors = ["#162311", "#2D4026", "#4C6345", "#738C6C", "#A2B89C"]
+        # Slices in a rich Cardinal Crimson #A21721 gradient
+        crimson_palette = ["#A21721", "#BF2632", "#D64852", "#E87881", "#F2A8AF", "#FBD3D7"]
+        slice_colors = crimson_palette[:len(labels)]
 
+        # Draw donut without crowded outer text labels (legend handles labels)
         wedges, texts, autotexts = ax.pie(
             counts,
-            labels=labels,
             autopct="%1.0f%%",
+            pctdistance=0.72,
             startangle=140,
-            colors=colors[:len(labels)],
-            textprops={"color": self.theme["text"], "fontsize": 8.5, "fontweight": "bold"},
-            pctdistance=0.75,
-            wedgeprops={"edgecolor": self.theme["card"], "linewidth": 2, "width": 0.45}
+            colors=slice_colors,
+            textprops={"fontsize": 8, "fontweight": "bold", "color": "#FFFFFF"},
+            wedgeprops={"edgecolor": self.theme["chart_bg"], "linewidth": 2, "width": 0.45}
         )
 
         for at in autotexts:
-            at.set_color("#162311" if self.theme["name"] == "dark" else "#FFF9F9")
+            at.set_color("#FFFFFF")
 
         # Center hole text
         ax.text(0, 0, f"Total\n{analytics['total']}", ha="center", va="center",
-                color=self.theme["text"], fontsize=10, fontweight="bold")
+                color=self.theme["accent"], fontsize=10, fontweight="bold")
 
-        ax.set_title("Grade Distribution", color=self.theme["text"], fontsize=11, fontweight="bold", pad=8)
+        ax.set_title("Grade Distribution", color=self.theme["accent"], fontsize=11, fontweight="bold", pad=8)
+
+        # Clean legend on the right side
+        legend_labels = [f"Grade {g}: {c}" for g, c in zip(labels, counts)]
+        ax.legend(
+            wedges, legend_labels,
+            loc="center left",
+            bbox_to_anchor=(0.92, 0.5),
+            facecolor=self.theme["card"],
+            edgecolor=self.theme["chart_border"],
+            labelcolor=self.theme["text"],
+            fontsize=8
+        )
 
     def _plot_course(self, ax, analytics):
         """Plots horizontal bar chart comparing course averages."""
@@ -616,7 +659,8 @@ class StudentApp(tk.Tk):
         averages = [data["average"] for data in stats.values()]
 
         y_positions = range(len(courses))
-        bars = ax.barh(y_positions, averages, color=self.theme["chart_bar"], height=0.45)
+        bars = ax.barh(y_positions, averages, color=self.theme["chart_bar"], height=0.45,
+                       edgecolor=self.theme["border"])
 
         for bar, avg in zip(bars, averages):
             ax.annotate(
@@ -634,12 +678,12 @@ class StudentApp(tk.Tk):
         ax.set_yticklabels(courses, color=self.theme["text"], fontsize=9.5)
         ax.set_xlim(0, 115)
         ax.set_xlabel("Average Marks", color=self.theme["text_muted"], fontsize=9)
-        ax.set_title("Course Performance Summary", color=self.theme["text"], fontsize=11, fontweight="bold", pad=8)
+        ax.set_title("Course Performance Summary", color=self.theme["accent"], fontsize=11, fontweight="bold", pad=8)
         ax.tick_params(colors=self.theme["text_muted"])
 
         for spine in ax.spines.values():
-            spine.set_color(self.theme["border"])
-        ax.grid(axis="x", color=self.theme["border"], linestyle=":", alpha=0.5)
+            spine.set_color(self.theme["chart_border"])
+        ax.grid(axis="x", color=self.theme["chart_border"], linestyle=":", alpha=0.6)
 
     def _plot_brackets(self, ax, analytics):
         """Plots score ranges histogram."""
@@ -649,11 +693,8 @@ class StudentApp(tk.Tk):
         labels = list(ranges.keys())
         values = list(ranges.values())
 
-        colors = ["#71896E", "#A1B69E", "#D5E2D3", "#FFF9F9"]
-        if self.theme["name"] == "light":
-            colors = ["#A2B89C", "#738C6C", "#4C6345", "#162311"]
-
-        bars = ax.bar(labels, values, color=colors, width=0.5)
+        colors = ["#8E7679", "#D64852", "#BF2632", "#A21721"]
+        bars = ax.bar(labels, values, color=colors, width=0.5, edgecolor=self.theme["border"])
 
         for bar, val in zip(bars, values):
             ax.annotate(
@@ -669,12 +710,12 @@ class StudentApp(tk.Tk):
 
         ax.set_ylim(0, max(values, default=1) + 2)
         ax.set_ylabel("Student Count", color=self.theme["text_muted"], fontsize=9)
-        ax.set_title("Score Bracket Distribution", color=self.theme["text"], fontsize=11, fontweight="bold", pad=8)
+        ax.set_title("Score Bracket Distribution", color=self.theme["accent"], fontsize=11, fontweight="bold", pad=8)
         ax.tick_params(colors=self.theme["text_muted"], labelsize=9)
 
         for spine in ax.spines.values():
-            spine.set_color(self.theme["border"])
-        ax.grid(axis="y", color=self.theme["border"], linestyle=":", alpha=0.5)
+            spine.set_color(self.theme["chart_border"])
+        ax.grid(axis="y", color=self.theme["chart_border"], linestyle=":", alpha=0.6)
 
     # =====================================================================
     # 4. VIEW STUDENT RECORDS (TABLE, LIVE SEARCH, DELETE)
@@ -685,7 +726,6 @@ class StudentApp(tk.Tk):
         self.students = load_students()
         self._make_header("Student Records", f"{len(self.students)} student(s) registered")
 
-        # Search and Action Toolbar
         toolbar = tk.Frame(self.content, bg=self.theme["bg"])
         toolbar.pack(fill="x", pady=(0, 12))
 
@@ -699,7 +739,6 @@ class StudentApp(tk.Tk):
         self.make_secondary_button(toolbar, "Delete Selected", self._delete_student).pack(side="right", padx=(8, 0))
         self.make_secondary_button(toolbar, "Update Marks", self.show_update).pack(side="right")
 
-        # Treeview Table
         table_box = tk.Frame(self.content, bg=self.theme["card"],
                              highlightthickness=1, highlightbackground=self.theme["border"])
         table_box.pack(fill="both", expand=True)
@@ -722,7 +761,6 @@ class StudentApp(tk.Tk):
             self.tree.heading(col_id, text=col_text)
             self.tree.column(col_id, width=col_width, anchor=col_align)
 
-        # Scrollbar
         sb = ttk.Scrollbar(table_box, orient="vertical", command=self.tree.yview)
         self.tree.configure(yscrollcommand=sb.set)
         sb.pack(side="right", fill="y")
@@ -740,7 +778,7 @@ class StudentApp(tk.Tk):
             grade = calculate_grade(marks)
             status = "PASSED" if marks >= 40 else "FAILED"
             self.tree.insert("", "end", values=(
-                s["roll_no"], s["name"], s["age"], s["course"],
+                s["roll_no"], s["name"].title(), s["age"], s["course"],
                 f"{marks:.2f}", grade, status
             ))
 
@@ -809,7 +847,6 @@ class StudentApp(tk.Tk):
         name    = self.e_name.get().strip()
         course  = self.e_course.get().strip()
 
-        # Validation checks
         if not roll_no or not name or not course:
             messagebox.showerror("Error", "Roll number, name, and course are required.")
             return
@@ -830,7 +867,6 @@ class StudentApp(tk.Tk):
             messagebox.showerror("Out of Range", "Check age (1-120) and marks (0-100).")
             return
 
-        # Create student dictionary
         student = {
             "roll_no": roll_no,
             "name": name,
@@ -893,7 +929,7 @@ class StudentApp(tk.Tk):
         card.pack(anchor="w", fill="x")
 
         tk.Label(card, text=found["name"].title(), bg=self.theme["card"],
-                 fg=self.theme["text"], font=FONT_TITLE).pack(anchor="w", pady=(0, 10))
+                 fg=self.theme["accent"], font=FONT_TITLE).pack(anchor="w", pady=(0, 10))
 
         details = [
             ("Roll Number", found["roll_no"]),
@@ -986,7 +1022,7 @@ class StudentApp(tk.Tk):
         top_card.pack(fill="x", pady=(0, 16))
 
         tk.Label(top_card, text="🏆 TOP PERFORMER", bg=self.theme["card"],
-                 fg=self.theme["text_muted"], font=("Segoe UI", 9, "bold")).pack(anchor="w")
+                 fg=self.theme["accent"], font=("Segoe UI", 9, "bold")).pack(anchor="w")
 
         if top:
             m = float(top["marks"])
@@ -1001,7 +1037,7 @@ class StudentApp(tk.Tk):
         avg_card.pack(fill="x", pady=(0, 16))
 
         tk.Label(avg_card, text="📊 CLASS AVERAGE", bg=self.theme["card"],
-                 fg=self.theme["text_muted"], font=("Segoe UI", 9, "bold")).pack(anchor="w")
+                 fg=self.theme["accent"], font=("Segoe UI", 9, "bold")).pack(anchor="w")
         tk.Label(avg_card, text=f"Class Mean: {insights['average']:.2f} Marks",
                  bg=self.theme["card"], fg=self.theme["text"], font=FONT_H1).pack(anchor="w", pady=(4, 2))
 
@@ -1011,7 +1047,7 @@ class StudentApp(tk.Tk):
         sup_card.pack(fill="x")
 
         tk.Label(sup_card, text="⚠️ STUDENTS NEEDING SUPPORT (< 40 marks)", bg=self.theme["card"],
-                 fg=self.theme["text_muted"], font=("Segoe UI", 9, "bold")).pack(anchor="w")
+                 fg=self.theme["accent"], font=("Segoe UI", 9, "bold")).pack(anchor="w")
 
         if not struggling:
             tk.Label(sup_card, text="✓ Great job! All students are meeting the passing standard (≥ 40 marks).",
@@ -1020,7 +1056,7 @@ class StudentApp(tk.Tk):
             for s in struggling:
                 row = tk.Frame(sup_card, bg=self.theme["card"])
                 row.pack(anchor="w", pady=4)
-                tk.Label(row, text="•", bg=self.theme["card"], fg=self.theme["text"], font=FONT_BOLD).pack(side="left", padx=(0, 6))
+                tk.Label(row, text="•", bg=self.theme["card"], fg=self.theme["accent"], font=FONT_BOLD).pack(side="left", padx=(0, 6))
                 tk.Label(row, text=f"{s['name'].title()} (Roll {s['roll_no']}) — {s['marks']} Marks ({s['course']})",
                          bg=self.theme["card"], fg=self.theme["text"], font=FONT_BODY).pack(side="left")
 

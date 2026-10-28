@@ -98,7 +98,7 @@ class StudentApp(tk.Tk):
         super().__init__()
 
         # Window settings
-        self.title("Student Management System • Analytics Dashboard")
+        self.title("Academic Management Portal • Analytics Dashboard")
         self.geometry("1180x750")
         self.minsize(1020, 640)
 

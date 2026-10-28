@@ -1,7 +1,8 @@
-"""
-storage.py - Data Persistence Module for Student Management System.
-Handles loading and saving student records to 'students.json'.
-"""
+# =====================================================================
+# storage.py
+# This file saves student data to a JSON file and loads it back.
+# JSON is a simple text format used to store lists and dictionaries.
+# =====================================================================
 
 import json
 import os
@@ -11,43 +12,40 @@ FILE_NAME = "students.json"
 
 def load_students():
     """
-    Load student records from the JSON file.
-    If the file does not exist, an empty file is created.
-    Returns a list of student dictionaries.
+    Loads the list of students from 'students.json'.
+    If the file does not exist, it creates a new empty file.
+    Returns: a list of student dictionaries.
     """
+    # Step 1: If the file doesn't exist yet, create it with an empty list []
     if not os.path.exists(FILE_NAME):
         save_students([])
         return []
 
+    # Step 2: Read the JSON file
     try:
         with open(FILE_NAME, "r", encoding="utf-8") as file:
-            data = json.load(file)
+            students = json.load(file)
 
-        if isinstance(data, list):
-            # Validate essential fields for each record
-            valid_students = []
-            for item in data:
-                if isinstance(item, dict) and "roll_no" in item and "name" in item:
-                    valid_students.append(item)
-            return valid_students
+        # Make sure the data is actually a list
+        if isinstance(students, list):
+            return students
+        else:
+            return []
 
-        print("[Warning] Student data file contains invalid structure. Resetting to empty list.")
-        return []
-
-    except (json.JSONDecodeError, OSError) as err:
-        print(f"[Error] Failed to read '{FILE_NAME}': {err}")
+    except json.JSONDecodeError:
+        print("Warning: The students.json file is empty or corrupted. Starting fresh.")
         return []
 
 
 def save_students(students):
     """
-    Save the list of student dictionaries to 'students.json'.
-    Ensures safe formatting and UTF-8 encoding.
+    Saves the list of students into 'students.json'.
     """
     try:
         with open(FILE_NAME, "w", encoding="utf-8") as file:
-            json.dump(students, file, indent=4, ensure_ascii=False)
+            # indent=4 makes the JSON file neat and easy to read
+            json.dump(students, file, indent=4)
         return True
-    except OSError as err:
-        print(f"[Error] Failed to write to '{FILE_NAME}': {err}")
+    except Exception as error:
+        print("Error saving student data:", error)
         return False

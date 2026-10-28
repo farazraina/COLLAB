@@ -1,77 +1,82 @@
-"""
-insights.py - Actionable Academic Insights Module for Student Management System.
-Identifies high achievers, students requiring support, and overall performance trends.
-"""
+# =====================================================================
+# insights.py
+# This file finds the top student and students who need help.
+# =====================================================================
 
 from grade_calculator import calculate_grade
 
 
 def get_insights(students):
     """
-    Extract key qualitative and actionable academic insights from student records.
-    Returns a dictionary of insights data.
+    Finds:
+    1. The top performing student (highest marks).
+    2. The class average.
+    3. The list of students who scored below 40 (need support).
     """
     if not students:
         return {
             "top_performer": None,
             "average": 0.0,
-            "struggling_students": [],
-            "top_performers_list": [],
+            "struggling_students": []
         }
 
-    # Top overall student
-    top_student = max(students, key=lambda s: float(s.get("marks", 0)))
+    # Step 1: Find the top student
+    top_student = students[0]
+    for s in students:
+        if float(s["marks"]) > float(top_student["marks"]):
+            top_student = s
 
-    # List of all students with grade A or A+
-    top_performers = [
-        s for s in students if float(s.get("marks", 0)) >= 80
-    ]
+    # Step 2: Calculate class average
+    total_marks = 0
+    for s in students:
+        total_marks = total_marks + float(s["marks"])
+    average = round(total_marks / len(students), 2)
 
-    # Students scoring below passing mark (40)
-    struggling = [
-        s for s in students if float(s.get("marks", 0)) < 40
-    ]
-
-    avg_marks = sum(float(s.get("marks", 0)) for s in students) / len(students)
+    # Step 3: Find students who failed (marks less than 40)
+    struggling = []
+    for s in students:
+        if float(s["marks"]) < 40:
+            struggling.append(s)
 
     return {
         "top_performer": top_student,
-        "average": round(avg_marks, 2),
-        "struggling_students": struggling,
-        "top_performers_list": top_performers,
+        "average": average,
+        "struggling_students": struggling
     }
 
 
 def show_insights(students):
-    """Print structured academic insights to the terminal console."""
-    print("\n" + "=" * 50)
-    print("        ACADEMIC PERFORMANCE INSIGHTS")
-    print("=" * 50)
+    """
+    Prints the insights to the terminal console.
+    """
+    print("\n==========================================")
+    print("      ACADEMIC PERFORMANCE INSIGHTS")
+    print("==========================================")
 
     if not students:
-        print("  [Notice] No student records available to analyze.")
-        print("=" * 50)
+        print("No student records available.")
         return
 
     data = get_insights(students)
     top = data["top_performer"]
     struggling = data["struggling_students"]
 
-    print("  🏆 TOP PERFORMER:")
+    # Show top student
+    print("\nTop Performer:")
     if top:
         grade = calculate_grade(top["marks"])
-        print(f"     Name    : {top['name'].title()}")
-        print(f"     Roll No : {top['roll_no']}")
-        print(f"     Course  : {top['course']}")
-        print(f"     Marks   : {top['marks']} ({grade})")
+        print("  Name :", top["name"])
+        print("  Marks:", top["marks"], f"({grade})")
+        print("  Roll :", top["roll_no"])
 
-    print(f"\n  📊 CLASS AVERAGE: {data['average']:.2f} marks")
+    print("\nClass Average:", data["average"])
 
-    print("\n  ⚠️ STUDENTS NEEDING ACADEMIC SUPPORT (< 40 marks):")
-    if struggling:
-        for s in struggling:
-            print(f"     • Roll {s['roll_no']}: {s['name'].title()} - {s['marks']} marks (Course: {s['course']})")
+    # Show students needing help
+    print("\nStudents Needing Academic Support (< 40 marks):")
+    if not struggling:
+        print("  Great! All students are currently passing.")
     else:
-        print("     ✓ Excellent! All students are currently meeting the passing standard.")
+        for s in struggling:
+            print("  -", s["name"], f"({s['marks']} marks)")
 
-    print("=" * 50)
+    print("==========================================")
